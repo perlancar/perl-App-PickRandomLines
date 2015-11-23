@@ -72,6 +72,7 @@ sub pick_random_lines {
     my $algo = $args{algorithm} // 'scan';
     $algo = 'scan' if !@$files || @$files > 1;
 
+    my @lines;
     if ($algo eq 'scan') {
         require File::Random::Pick;
         my $path;
@@ -82,14 +83,14 @@ sub pick_random_lines {
         } else {
             $path = $files->[0];
         }
-        return [200, "OK", [File::Random::Pick::random_line($path, $n)]];
+        @lines = File::Random::Pick::random_line($path, $n);
     } else {
         require File::RandomLine;
         my $rl = File::RandomLine->new($files->[0]);
-        my @lines;
         for (1..$n) { push @lines, $rl->next }
-        return [200, "OK", \@lines];
     }
+    chomp @lines;
+    [200, "OK", \@lines];
 }
 
 1;
