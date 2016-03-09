@@ -37,7 +37,7 @@ _
             description => <<'_',
 
 `scan` is the algorithm described in the `perlfaq` manual (`perldoc -q "random
-line"). This algorithm scans the whole input once and pick one or more lines
+line"). This algorithm scans the whole input once and picks one or more lines
 randomly from it.
 
 `seek` is the algorithm employed by the Perl module `File::RandomLine`. It works
