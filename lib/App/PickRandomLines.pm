@@ -61,6 +61,9 @@ return as many lines as the input contains.
 _
         },
     },
+    links => [
+        {url=>'pm:Data::Unixish::pick'},
+    ],
 };
 sub pick_random_lines {
     my %args = @_;
