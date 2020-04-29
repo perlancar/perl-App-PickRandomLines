@@ -1,6 +1,8 @@
 package App::PickRandomLines;
 
+# AUTHORITY
 # DATE
+# DIST
 # VERSION
 
 use 5.010001;
@@ -20,8 +22,7 @@ TODO:
 _
     args => {
         files => {
-            schema => ['array*', of=>'str*'],
-            'x.schema.element_entity' => 'filename',
+            schema => ['array*', of=>'filename*'],
             'x.name.is_plural' => 1,
             pos => 0,
             greedy => 1,
