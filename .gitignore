@@ -2,3 +2,4 @@ App-PickRandomLines-*
 .build
 *~
 nytprof*
+.DS_Store
