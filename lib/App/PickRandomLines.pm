@@ -64,6 +64,19 @@ _
     },
     links => [
         {url=>'pm:Data::Unixish::pick'},
+        {
+            url=>'prog:shuf',
+            summary=>'The venerable Unix utility',
+            description => <<'MARKDOWN'
+
+`shuf -n` is a Unix idiom for when wanting to pick one or several lines from an
+input. Our `pick` is generally slower than the optimized C-based utility, but
+offers several pick algorithms like `scan` (which does not need to hold the
+entire input in memory for shuffling) and `seek` (which does not need to scan
+the entire input).
+
+MARKDOWN
+        },
     ],
 };
 sub pick_random_lines {
